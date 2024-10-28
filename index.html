@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kimmi's Kitchen & Bakhouse</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <style>
     :root {
         --color-primary: #006400; /* Dark Green */
@@ -42,6 +42,10 @@
         color: white;
         text-decoration: none;
         font-family: 'Montserrat', sans-serif;
+        transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+        color: var(--color-accent);
     }
     h1, h2 {
         font-family: 'Montserrat', sans-serif;
@@ -59,10 +63,14 @@
     }
     .bio, .harvest-tables, .contact {
         margin-bottom: 40px;
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .bio p, .harvest-tables p, .contact p {
+        margin-bottom: 15px;
+        padding: 0 10px;
     }
     .home-image {
         width: 100%;
@@ -102,6 +110,10 @@
         text-decoration: none;
         font-size: 18px;
         z-index: 1;
+        transition: background 0.3s ease;
+    }
+    .carousel-control:hover {
+        background: rgba(0, 0, 0, 0.9);
     }
     .carousel-control.prev { left: 10px; }
     .carousel-control.next { right: 10px; }
@@ -110,6 +122,18 @@
         margin-top: 40px;
         color: var(--color-secondary);
         font-size: 0.9em;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+    .social-links a {
+        color: var(--color-primary);
+        font-size: 24px;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+        color: var(--color-accent);
     }
     @media (max-width: 768px) {
         body {
@@ -126,7 +150,6 @@
 </head>
 <body>
     <header>
-        <h1>Kimmi's Kitchen & Bakhouse</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -179,6 +202,7 @@
         <p>Whether as a standalone feature or part of a larger event, our Harvest Tables offer a bountiful, interactive dining experience that invites guests to explore, share, and savor the rich flavors of our region. It's more than just a meal; it's a journey through the tastes, textures, and traditions that make our culinary heritage so special.</p>
     </section>
 
+
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>Address: Fish Hoek, Cape Town, South Africa</p>
@@ -187,6 +211,11 @@
 
     <footer>
         <p>&copy; 2023 Kimmi's Kitchen & Bakhouse. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 
     <script>
