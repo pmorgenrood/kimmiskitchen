@@ -45,35 +45,44 @@
         }
         .home-image {
             width: 100%;
-            max-height: 600px;
+            max-height: 500px;
             object-fit: cover;
             margin-bottom: 20px;
             border-radius: 8px;
         }
-        .image-columns {
-            display: flex;
-            justify-content: space-between;
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
             margin-bottom: 40px;
         }
-        .image-column {
-            flex-basis: 32%;
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
         }
-        .image-column img {
+        .carousel-item {
+            min-width: 100%;
+            height: 400px;
+        }
+        .carousel-item img {
             width: 100%;
-            height: 240px;
+            height: 100%;
+            object-fit: cover;
             border-radius: 8px;
-            transition: transform 0.3s ease;
         }
-        .image-column img:hover {
-            transform: scale(1.05);
-        }
-        a {
-            color: var(--color-secondary);
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
             text-decoration: none;
+            font-size: 18px;
         }
-        a:hover {
-            text-decoration: underline;
-        }
+        .carousel-control.prev { left: 10px; }
+        .carousel-control.next { right: 10px; }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -83,57 +92,61 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Kimmi's Kitchen & Bakhouse</h1>
+    </header>
 
-  <section class="home-image-section">
-        <img src="/img/home.jpeg" alt="Kimmi's Kitchen & Bakehouse" class="home-image">
+    <section class="home-image-section">
+        <img src="/img/home.jpg" alt="Kimmi's Kitchen & Bakhouse" class="home-image">
     </section>
 
-    <section class="image-columns">
-        <div class="image-column">
-            <img src="/img/image1.jpeg" alt="Culinary Image 1">
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item"><img src="/img/image1.jpeg" alt="Culinary Image 1"></div>
+            <div class="carousel-item"><img src="/img/image2.jpeg" alt="Culinary Image 2"></div>
+            <div class="carousel-item"><img src="/img/image3.jpeg" alt="Culinary Image 3"></div>
         </div>
-        <div class="image-column">
-            <img src="/img/image3.jpeg" alt="Culinary Image 2">
-        </div>
-        <div class="image-column">
-            <img src="/img/image2.jpeg" alt="Culinary Image 3">
-        </div>
-        <div class="image-column">
-            <img src="/img/2024-09-03.jpeg" alt="Culinary Image 4">
-        </div>
-    </section>
+        <a href="#" class="carousel-control prev">&lt;</a>
+        <a href="#" class="carousel-control next">&gt;</a>
+    </div>
 
     <section class="bio">
         <h2>About Kimmi</h2>
-        <p>Kim is a passionate chef, devoted mother, and successful small business owner hailing from the vibrant city of Cape Town, South Africa. Born and raised in this culinary melting pot, Kim developed a lifelong passion for creating delicious, healthy meals from scratch.</p>
-        
-        <p>With a deep-rooted commitment to nourishing both her family and her community, Kim has turned her love for food into a thriving career. Her approach to cooking emphasizes fresh, wholesome ingredients and time-honored techniques, resulting in dishes that are both nutritious and bursting with flavor.</p>
-        
-        <p>As a small business owner, Kim brings her unique blend of South African heritage and global culinary influences to every project she undertakes. She prides herself on offering bespoke services, working closely with clients to understand and meet their individual needs. This personalized approach ensures that each event is tailored to perfection, reflecting the client's vision and preferences.</p>
-        
-        <p>Kim's infectious enthusiasm for celebrating life through food is evident in her catering services, which are renowned for turning every occasion into a memorable feast. Her attention to detail and commitment to customization have earned her a loyal clientele who trust her to elevate their events with her culinary expertise.</p>
-        
-        <p>When not in the kitchen or running her business, Kim can be found spending quality time with her family or planning her next gathering. Her belief that good food brings people together drives her to continually innovate and share her culinary creations with others.</p>
-        
-        <p>Kim's journey from a Cape Town kitchen to a respected figure in the local food scene is a testament to her dedication, skill, and unwavering passion for feeding both body and soul. Through her bespoke services and from-scratch healthy food, she continues to delight and nourish her community, one carefully crafted meal at a time.</p>
+        <!-- Bio content here -->
     </section>
-
 
     <section class="harvest-tables">
         <h2>Harvest Tables: A Celebration of Nature's Bounty</h2>
-        <p>At the heart of our culinary offerings lies the artful presentation of our Harvest Tables, a feast for both the eyes and the palate. These stunning displays are more than just a meal; they're a testament to the rich tapestry of local produce and time-honored traditions.</p>
-        
-        <p>Our Harvest Tables showcase the very best of nature's bounty, artfully arranged to create a visual spectacle that honors the beauty of fresh, seasonal ingredients. From vibrant, locally-sourced vegetables to artisanal cheeses and freshly baked breads, each element is carefully selected and lovingly presented.</p>
-        
-        <p>But the allure of our Harvest Tables extends beyond mere aesthetics. They are a celebration of flavor and craftsmanship, featuring an array of family-made preserves, jams, and pâtés that have been perfected over generations. These homemade delicacies, along with our from-scratch offerings, reflect our commitment to authentic, wholesome food.</p>
-        
-        <p>Every Harvest Table is a unique expression of our culture and heritage, blending traditional recipes with contemporary flair. We take pride in sourcing from local producers, supporting our community while ensuring the freshest, highest-quality ingredients for our guests.</p>
-        
-        <p>Whether as a standalone feature or part of a larger event, our Harvest Tables offer a bountiful, interactive dining experience that invites guests to explore, share, and savor the rich flavors of our region. It's more than just a meal; it's a journey through the tastes, textures, and traditions that make our culinary heritage so special.</p>
+        <!-- Harvest Tables content here -->
     </section>
 
     <footer>
-        <p>&copy; 2023 Kimmi's Kitchen & Bakehouse. All rights reserved.</p>
+        <p>&copy; 2023 Kimmi's Kitchen & Bakhouse. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel-inner');
+            const items = carousel.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                if (index < 0) index = items.length - 1;
+                if (index >= items.length) index = 0;
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+                currentIndex = index;
+            }
+
+            document.querySelector('.carousel-control.prev').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSlide(currentIndex - 1);
+            });
+
+            document.querySelector('.carousel-control.next').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSlide(currentIndex + 1);
+            });
+        });
+    </script>
 </body>
 </html>
